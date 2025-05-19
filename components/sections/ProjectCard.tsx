@@ -7,19 +7,21 @@ import Image from "next/image";
 interface ProjectCardProps {
   project: ProjectType;
 }
-export function ProjectCard({ project }: ProjectCardProps) {
+export async function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className='border rounded-lg overflow-hidden hover:shadow-lg transition-shadow'>
-      <div className='h-78 bg-muted overflow-hidden'>
-        <Image
-          src={project.coverImage}
-          alt={project.title}
-          className='w-full h-full object-cover'
-          height={0}
-          width={0}
-          sizes='100vw'
-        />
-      </div>
+      <Link href={`projects/${project._id}`}>
+        <div className='h-78 bg-muted overflow-hidden'>
+          <Image
+            src={project.coverImage}
+            alt={project.title}
+            className='w-full h-full object-cover grayscale hover:grayscale-0 transition duration-300'
+            height={0}
+            width={0}
+            sizes='100vw'
+          />
+        </div>
+      </Link>
       <div className='p-6'>
         <h3 className='text-xl font-semibold mb-2'>{project.title}</h3>
         <p className='text-muted-foreground mb-4 line-clamp-2'>

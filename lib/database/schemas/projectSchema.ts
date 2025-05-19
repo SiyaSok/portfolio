@@ -3,6 +3,7 @@
 import { z } from "zod";
 
 export const projectSchema = z.object({
+  _id: z.string().min(3).max(100),
   title: z.string().min(3).max(100),
   slug: z
     .string()
