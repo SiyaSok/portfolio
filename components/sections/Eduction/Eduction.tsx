@@ -1,13 +1,12 @@
 /** @format */
 
 import { Badge } from "@/components/ui/badge";
+import { getEduction } from "@/lib/actions/eduction.actions";
 import connectDB from "@/lib/database/connection";
-import Education from "@/lib/database/models/educationModel";
 
 export async function Eduction() {
   await connectDB();
-  const education = await Education.find();
-
+  const education = await getEduction();
   return (
     <section className='py-12 md:py-20'>
       <div className='container mx-auto px-4'>

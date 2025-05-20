@@ -6,18 +6,26 @@ import { ProjectType } from "@/types";
 import Image from "next/image";
 interface ProjectCardProps {
   project: ProjectType;
+  index: number;
 }
-export async function ProjectCard({ project }: ProjectCardProps) {
+export async function ProjectCard({ index, project }: ProjectCardProps) {
+  function isEven(num: number) {
+    return num % 2 === 0;
+  }
+
   return (
-    <div className='border rounded-lg overflow-hidden hover:shadow-lg transition-shadow flex flex-col md:flex-row items-center md:gap-10'>
+    <div
+      className={`border rounded-lg overflow-hidden hover:shadow-lg transition-shadow flex flex-col md:flex-row items-center md:gap-10 ${
+        isEven(index) ? "" : "flex-row-reverse bg-zinc-100"
+      }`}>
       <Link href={`projects/${project._id}`}>
         <div className='w-full bg-muted overflow-hidden'>
           <Image
             src={project.coverImage}
             alt={project.title}
             className='w-full object-contain grayscale hover:grayscale-0 transition duration-300 cursor-pointer'
-            height={400}
-            width={400}
+            height={300}
+            width={300}
           />
         </div>
       </Link>

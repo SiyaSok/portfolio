@@ -1,19 +1,19 @@
 /** @format */
 
-import ExperienceGrid from "@/components/sections/ExperienceGrid";
-import { Eduction } from "@/components/sections/Eduction";
+import { Eduction } from "@/components/sections/Eduction/Eduction";
+import Experiences from "@/components/sections/Experience/Experiences";
 import Heading from "@/components/sections/Heading";
 import { Hero } from "@/components/sections/Hero";
-import { ProjectsGrid } from "@/components/sections/ProjectsGrid";
+import { Projects } from "@/components/sections/Project/Projects";
 
 export default async function Home() {
   return (
     <div>
       <Hero />
       <Heading heading='01. Builts' />
-      <ProjectsGrid />
+      <Projects />
       <Heading heading='02. Experience' />
-      <ExperienceGrid />
+      <Experiences />
       <Heading heading='03. Eduction' />
       <Eduction />
     </div>

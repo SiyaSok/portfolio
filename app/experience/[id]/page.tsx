@@ -1,7 +1,6 @@
 /** @format */
 
-import connectDB from "@/lib/database/connection";
-import Experience from "@/lib/database/models/experienceModel";
+import { getExperienceById } from "@/lib/actions/experience.actions";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,9 +9,7 @@ const ExperienceDisplayPage = async (props: {
 }) => {
   const { id } = await props.params;
 
-  await connectDB();
-
-  const experience = await Experience.findById(id);
+  const experience = await getExperienceById(id);
 
   return (
     <div className='container mx-auto px-4 py-12'>

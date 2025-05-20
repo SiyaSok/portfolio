@@ -1,15 +1,15 @@
 /** @format */
 
 import { Badge } from "@/components/ui/badge";
-import Project from "@/lib/database/models/projectModel";
 import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
+import { getProjectById } from "@/lib/actions/project-actions";
 
 const ProjectPage = async (props: { params: Promise<{ id: string }> }) => {
   const { id } = await props.params;
 
-  const project = await Project.findById(id);
+  const project = await getProjectById(id);
 
   return (
     <div className='container mx-auto px-4 py-12'>
