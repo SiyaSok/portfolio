@@ -4,6 +4,7 @@ import Experience from "@/lib/database/models/experienceModel";
 import { ExperienceCard } from "./ExperienceCard";
 
 const ExperienceGrid = async () => {
+  await connectDB();
   const experiences = await Experience.find();
 
   return (
