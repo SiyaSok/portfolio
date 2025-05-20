@@ -1,34 +1,18 @@
 /** @format */
 
 import { Badge } from "@/components/ui/badge";
+import connectDB from "@/lib/database/connection";
+import Education from "@/lib/database/models/educationModel";
 
-interface Project {
-  title: string;
-  description: string;
-  shortDescription: string;
-  tags: string[];
-  link?: string;
-}
-
-export function Eduction() {
-  const projects: Project[] = [
-    {
-      title: "Halcyon Theme",
-      description:
-        "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm2, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
-      shortDescription:
-        "A mobility club likes home for VS Code, Sublime Text, Atom, and more.",
-      tags: ["VS Code", "Sublime Text", "Atom", "iTerm2", "Hyper"],
-      link: "#",
-    },
-    // Add more projects here
-  ];
+export async function Eduction() {
+  await connectDB();
+  const education = await Education.find();
 
   return (
     <section className='py-12 md:py-20'>
       <div className='container mx-auto px-4'>
         <div className='grid grid-cols-1 gap-8'>
-          {projects.map((project, index) => (
+          {education.map((project, index) => (
             <div key={index} className='group relative'>
               {/* Project Card */}
               <div className='relative z-10 p-6 md:p-8 bg-background border rounded-lg shadow-sm group-hover:shadow-md transition-shadow'>
@@ -37,33 +21,31 @@ export function Eduction() {
                   <div className='flex-1'>
                     <div className='mb-2'>
                       <Badge variant='outline' className='text-primary'>
-                        Featured Project
+                        Qaulification
                       </Badge>
                     </div>
                     <h3 className='text-xl md:text-2xl font-bold mb-2'>
-                      {project.title}
+                      {project.qaulification}
                     </h3>
-                    <p className='text-muted-foreground mb-4'>
-                      {project.shortDescription}
+                    <p className='text-sm mb-3'>{project.description}</p>
+                    <p className='text-sm mb-3'>{project.collage}</p>
+                    <p className='text-sm mb-3'>{project.location}</p>
+                    <p className='text-sm mb-3'>
+                      {new Date(project.startDate).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                      })}{" "}
+                      -{" "}
+                      {project.endDate
+                        ? new Date(project.endDate).toLocaleDateString(
+                            "en-US",
+                            {
+                              year: "numeric",
+                              month: "long",
+                            }
+                          )
+                        : "Present"}
                     </p>
-                    <p className='text-sm mb-6'>{project.description}</p>
-
-                    {/* Technologies */}
-                    <div className='flex flex-wrap gap-2'>
-                      {project.tags.map((tag, i) => (
-                        <Badge key={i} variant='secondary' className='text-xs'>
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Project Image (placeholder) */}
-                  <div className='hidden md:block w-48 h-48 bg-muted rounded-lg overflow-hidden'>
-                    {/* Replace with actual image */}
-                    <div className='w-full h-full flex items-center justify-center text-muted-foreground'>
-                      Project Preview
-                    </div>
                   </div>
                 </div>
               </div>

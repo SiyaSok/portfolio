@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className='min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-zinc-900 to-black relative'>
+    <section className='min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-zinc-900 to-black relative '>
       <div className='absolute inset-0 overflow-hidden'>
         <div className='absolute top-0 left-0 w-full h-full opacity-20'>
           {/* Animated grid background */}
