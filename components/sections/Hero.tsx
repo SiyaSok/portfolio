@@ -1,18 +1,18 @@
 /** @format */
 
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className='min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-zinc-900 to-black'>
+    <section className='min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-zinc-900 to-black relative'>
       <div className='absolute inset-0 overflow-hidden'>
         <div className='absolute top-0 left-0 w-full h-full opacity-20'>
           {/* Animated grid background */}
           <div className='absolute inset-0 opacity-20 bg-[size:40px_40px] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)]'></div>
 
           {/* Floating animated circles */}
-          <div className='absolute top-1/8 left-1/2 w-24 h-24 rounded-full bg-white opacity-10 mix-blend-screen animate-float1'></div>
+          <div className='absolute top-1/8 left-1/2 w-24 h-24 rounded-full bg-white opacity-10 mix-blend-difference animate-float1'></div>
           <div className='absolute top-1/4 left-1/2 w-30 h-30 rounded-full bg-white opacity-10 mix-blend-screen animate-float2'></div>
           <div className='absolute top-1/4 left-1/2 w-64 h-64 rounded-full bg-white opacity-10 mix-blend-screen animate-float3'></div>
           <div className='absolute bottom-1/4 left-1/2 w-30 h-30 rounded-full bg-white opacity-10 mix-blend-screen animate-float3'></div>
@@ -29,28 +29,46 @@ export function Hero() {
       <div className='container mx-auto px-4 relative z-10'>
         <div className='max-w-3xl mx-auto text-center'>
           <h1 className='text-4xl md:text-6xl font-bold mb-6 text-white'>
-            Hi, I&lsquo;m
-            <span className='text-primary-300'> Siyanda Sokhela</span>
+            <span className='text-primary-300'>Siyanda Sokhela</span>
           </h1>
           <p className='text-xl text-gray-300 mb-8'>
             Front-End Developer creating beautiful, responsive web experiences
           </p>
-          <div className='flex gap-4 justify-center'>
+          {/* <div className='flex gap-4 justify-center'>
             <Button
               asChild
-              className='bg-white text-indigo-900 hover:bg-gray-100'>
+              className='bg-white text-indigo-900 hover:bg-gray-100 w-40'>
               <Link href='#projects'>View My Work</Link>
             </Button>
             <Button
               variant='outline'
               asChild
-              className='bg-white text-indigo-900 hover:bg-gray-100'>
+              className='bg-white text-indigo-900 hover:bg-gray-100 w-40'>
               <Link href='/resume.pdf' target='_blank'>
                 Resume
               </Link>
             </Button>
-          </div>
+          </div> */}
         </div>
+      </div>
+
+      {/* Floating down arrow icon */}
+      <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce'>
+        <Link href='#projects' className='block'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='32'
+            height='32'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            strokeWidth='2'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            className='text-white opacity-80 hover:opacity-100 transition-opacity'>
+            <path d='M12 5v14M19 12l-7 7-7-7' />
+          </svg>
+        </Link>
       </div>
     </section>
   );
