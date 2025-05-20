@@ -9,7 +9,7 @@ interface ProjectCardProps {
 }
 export async function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className='border rounded-lg overflow-hidden hover:shadow-lg transition-shadow flex items-center gap-10'>
+    <div className='border rounded-lg overflow-hidden hover:shadow-lg transition-shadow flex flex-col md:flex-row items-center md:gap-10'>
       <Link href={`projects/${project._id}`}>
         <div className='w-full bg-muted overflow-hidden'>
           <Image

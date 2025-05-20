@@ -10,10 +10,11 @@ export default async function Home() {
   return (
     <div>
       <Hero />
-      <Heading heading='01. Some Things I have Built' />
+      <Heading heading='01. Builts' />
       <ProjectsGrid />
-      <Heading heading='03. Some Experience' />
+      <Heading heading='02. Experience' />
       <ExperienceGrid />
+      <Heading heading='03. Eduction' />
       <FeaturedProjects />
     </div>
   );

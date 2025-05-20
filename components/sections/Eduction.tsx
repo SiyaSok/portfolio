@@ -10,7 +10,7 @@ interface Project {
   link?: string;
 }
 
-export function FeaturedProjects() {
+export function Eduction() {
   const projects: Project[] = [
     {
       title: "Halcyon Theme",
@@ -27,15 +27,6 @@ export function FeaturedProjects() {
   return (
     <section className='py-12 md:py-20'>
       <div className='container mx-auto px-4'>
-        {/* Section Header */}
-        <div className='flex items-center gap-4 mb-12'>
-          <h2 className='text-2xl md:text-3xl font-bold text-primary whitespace-nowrap'>
-            03. Some Things I have Built
-          </h2>
-          <div className='w-full h-px bg-border' />
-        </div>
-
-        {/* Projects Grid */}
         <div className='grid grid-cols-1 gap-8'>
           {projects.map((project, index) => (
             <div key={index} className='group relative'>
