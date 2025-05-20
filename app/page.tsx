@@ -1,7 +1,7 @@
 /** @format */
 
 import ExperienceGrid from "@/components/sections/ExperienceGrid";
-import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
+import { Eduction } from "@/components/sections/Eduction";
 import Heading from "@/components/sections/Heading";
 import { Hero } from "@/components/sections/Hero";
 import { ProjectsGrid } from "@/components/sections/ProjectsGrid";
@@ -15,7 +15,7 @@ export default async function Home() {
       <Heading heading='02. Experience' />
       <ExperienceGrid />
       <Heading heading='03. Eduction' />
-      <FeaturedProjects />
+      <Eduction />
     </div>
   );
 }
