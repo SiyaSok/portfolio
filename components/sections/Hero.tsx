@@ -45,7 +45,7 @@ export function Hero() {
               variant='outline'
               asChild
               className='bg-white text-indigo-900 hover:bg-gray-100'>
-              <Link href='http://localhost:3000/resume.pdf' target='_blank'>
+              <Link href='/resume.pdf' target='_blank'>
                 Resume
               </Link>
             </Button>
