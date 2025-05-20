@@ -9,16 +9,15 @@ interface ProjectCardProps {
 }
 export async function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className='border rounded-lg overflow-hidden hover:shadow-lg transition-shadow'>
+    <div className='border rounded-lg overflow-hidden hover:shadow-lg transition-shadow flex items-center gap-10'>
       <Link href={`projects/${project._id}`}>
-        <div className='h-78 bg-muted overflow-hidden'>
+        <div className='w-full bg-muted overflow-hidden'>
           <Image
             src={project.coverImage}
             alt={project.title}
-            className='w-full h-full object-cover grayscale hover:grayscale-0 transition duration-300'
-            height={0}
-            width={0}
-            sizes='100vw'
+            className='w-full object-contain grayscale hover:grayscale-0 transition duration-300 cursor-pointer'
+            height={400}
+            width={400}
           />
         </div>
       </Link>
@@ -39,7 +38,7 @@ export async function ProjectCard({ project }: ProjectCardProps) {
             <Link
               href={project.liveUrl}
               target='_blank'
-              className='text-sm font-medium text-primary hover:underline'>
+              className='text-sm font-medium text-primary hover:underline cursor-pointer'>
               Live Demo
             </Link>
           )}
@@ -47,13 +46,13 @@ export async function ProjectCard({ project }: ProjectCardProps) {
             <Link
               href={project.githubUrl}
               target='_blank'
-              className='text-sm font-medium text-primary hover:underline'>
+              className='text-sm font-medium text-primary hover:underline cursor-pointer'>
               View Code
             </Link>
           )}
           <Link
-            href={`/projects/${project.slug}`}
-            className='text-sm font-medium text-primary hover:underline ml-auto'>
+            href={`/projects/${project._id}`}
+            className='text-sm font-medium text-primary hover:underline ml-auto cursor-pointer'>
             View Details
           </Link>
         </div>

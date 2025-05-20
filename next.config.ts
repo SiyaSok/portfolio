@@ -13,7 +13,22 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "example.com",
+        hostname: "www.repwise.co.za",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.omni.mrpg.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "6412394.fs1.hubspotusercontent-na1.net",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "image.blob.ix.co.za",
         pathname: "**",
       },
     ],

@@ -5,6 +5,7 @@ import { z } from "zod";
 
 // Zod Schema for validation
 export const experienceSchemaZod = z.object({
+  _id: z.string().min(3).max(100),
   role: z.string().min(3).max(100),
   company: z.string().min(3).max(100),
   description: z.string().min(10).max(1000),

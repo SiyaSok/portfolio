@@ -10,9 +10,11 @@ export async function ProjectsGrid() {
   const filteredProjects = await Project.find();
 
   return (
-    <section className='min-h-screen flex items-center justify-center mt-8'>
+    <section
+      id='projects'
+      className='min-h-screen flex items-center justify-center mt-8'>
       <div className="className='container-xl lg:container m-auto px-4 py-6'">
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8'>
+        <div className='grid grid-cols-1 gap-8'>
           {filteredProjects.map((pro) => (
             <ProjectCard key={pro._id.toString()} project={pro} />
           ))}
