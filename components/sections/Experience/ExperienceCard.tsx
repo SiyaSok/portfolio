@@ -26,7 +26,7 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
   return (
     <div
       className={`border rounded-lg p-6 hover:shadow-md transition-shadow ${
-        isEven(index) ? "bg-white" : "flex-row-reverse bg-zinc-100"
+        isEven(index) ? "bg-white" : " bg-zinc-100"
       }`}>
       <Link href={`/experience/${experience._id}`}>
         <div className='flex flex-col sm:flex-row gap-4'>

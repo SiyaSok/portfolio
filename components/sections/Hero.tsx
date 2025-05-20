@@ -53,7 +53,7 @@ export function Hero() {
       </div>
 
       {/* Floating down arrow icon */}
-      <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce'>
+      <div className='absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce'>
         <Link href='#projects' className='block'>
           <svg
             xmlns='http://www.w3.org/2000/svg'

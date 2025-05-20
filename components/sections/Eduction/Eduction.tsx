@@ -8,7 +8,7 @@ export async function Eduction() {
   await connectDB();
   const education = await getEduction();
   return (
-    <section className='py-12 md:py-20'>
+    <section className=''>
       <div className='container mx-auto px-4'>
         <div className='grid grid-cols-1 gap-8'>
           {education.map((project, index) => (
