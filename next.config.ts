@@ -31,6 +31,11 @@ const nextConfig = {
         hostname: "image.blob.ix.co.za",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "**",
+      },
     ],
   },
 };
