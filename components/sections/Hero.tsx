@@ -34,26 +34,11 @@ export function Hero() {
           <p className='text-xl text-gray-300 mb-8'>
             Front-End Developer creating beautiful, responsive web experiences
           </p>
-          {/* <div className='flex gap-4 justify-center'>
-            <Button
-              asChild
-              className='bg-white text-indigo-900 hover:bg-gray-100 w-40'>
-              <Link href='#projects'>View My Work</Link>
-            </Button>
-            <Button
-              variant='outline'
-              asChild
-              className='bg-white text-indigo-900 hover:bg-gray-100 w-40'>
-              <Link href='/resume.pdf' target='_blank'>
-                Resume
-              </Link>
-            </Button>
-          </div> */}
         </div>
       </div>
 
       {/* Floating down arrow icon */}
-      <div className='absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce'>
+      <div className='absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce'>
         <Link href='#projects' className='block'>
           <svg
             xmlns='http://www.w3.org/2000/svg'

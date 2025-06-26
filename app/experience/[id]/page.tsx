@@ -8,7 +8,6 @@ const ExperienceDisplayPage = async (props: {
   params: Promise<{ id: string }>;
 }) => {
   const { id } = await props.params;
-
   const experience = await getExperienceById(id);
 
   return (
@@ -20,8 +19,8 @@ const ExperienceDisplayPage = async (props: {
         ← Go Back
       </Link>
       <div className='mb-8 p-6 bg-white rounded-lg shadow-md'>
-        <div className='flex flex-col md:flex-row justify-between gap-4 mb-4'>
-          <div className='flex items-start gap-4'>
+        <div className='flex flex-col md:flex-row justify-between gap-4 mb-4 items-center bg-gray-100 p-4 rounded-lg'>
+          <div className='flex items-center gap-4'>
             {experience.logo && (
               <Image
                 src={experience.logo}
@@ -40,11 +39,11 @@ const ExperienceDisplayPage = async (props: {
             </div>
           </div>
           <div className='text-right'>
-            <p className='text-gray-500'>{experience.employmentType}</p>
-            <p className='text-gray-500'>
+            <p className='text-black font-bold'>{experience.employmentType}</p>
+            <p className='text-black font-bold'>
               {experience.location} ({experience.locationType})
             </p>
-            <p className='text-gray-500'>
+            <p className='text-black font-bold'>
               {new Date(experience.startDate).toLocaleDateString("en-US", {
                 month: "short",
                 year: "numeric",

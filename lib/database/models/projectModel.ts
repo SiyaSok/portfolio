@@ -34,10 +34,30 @@ const ProjectSchema = new Schema(
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
   },
+
   {
     timestamps: true, // auto-manages createdAt and updatedAt
   }
 );
+
+// Add instance methods
+ProjectSchema.methods.findSimilarTypes = function (
+  cb: (err: Error | null, docs: Document[]) => void
+) {
+  return model("Project").find({ type: (this as { type: string }).type }, cb);
+};
+ProjectSchema.methods.findBySlug = function (
+  slug: string,
+  cb: (err: Error, docs: Document[]) => void
+) {
+  return model("Project").find({ slug }, cb);
+};
+ProjectSchema.methods.findById = function (
+  id: string,
+  cb: (err: Error, docs: Document[]) => void
+) {
+  return model("Project").findById(id, cb);
+};
 
 // Use existing model if already compiled, otherwise define it
 const Project = models.Project || model("Project", ProjectSchema);

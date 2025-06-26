@@ -9,6 +9,7 @@ export const getProjects = async () => {
   try {
     await connectDB();
     const projects = await Project.find();
+
     return projects;
   } catch (error) {
     console.error("Error fetching experiences:", error);
@@ -19,6 +20,7 @@ export const getProjectById = async (id: string) => {
   try {
     await connectDB();
     const project = await Project.findById(id);
+
     return project;
   } catch (error) {
     console.error("Error fetching experiences:", error);
