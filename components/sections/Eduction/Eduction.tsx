@@ -15,14 +15,14 @@ export async function Eduction() {
   return (
     <section className=''>
       <div className='container mx-auto px-4'>
-        <div className='grid grid-cols-2 gap-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
           {education.map((project, index) => (
             <div
               key={index}
-              className={`group relative h-58 md:h-58 overflow-hidden rounded-lg border border-muted shadow-sm hover:drop-shadow-accent transition-shadow duration-300 
+              className={`group relative h-68 md:h-62 overflow-hidden rounded-lg border border-muted shadow-sm hover:drop-shadow-accent transition-shadow duration-300 
               ${isEven(index) ? "bg-white" : " bg-black text-white"}`}>
               {/* Project Card */}
-              <div className='p-6 flex flex-col h-full relative'>
+              <div className='p-6 flex flex-col h-full relative justify-content-center'>
                 <div className='flex flex-col md:flex-row gap-6'>
                   {/* Project Content */}
                   <div className='flex-1'>

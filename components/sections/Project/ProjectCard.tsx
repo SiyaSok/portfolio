@@ -17,17 +17,17 @@ export async function ProjectCard({ index, project }: ProjectCardProps) {
 
   return (
     <div
-      className={`min-h-72 border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row items-stretch ${
+      className={`h-auto md:min-h-72 border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row items-stretch ${
         isEven(index) ? "bg-white" : "bg-black text-white"
       }`}>
       {/* Image Section - 30% */}
       <Link href={`projects/${project._id}`} className='w-full md:w-[30%]'>
-        <div className='h-72 w-full bg-muted relative aspect-square md:aspect-auto'>
+        <div className='h-52 md:h-72 w-full bg-muted relative aspect-square md:aspect-auto'>
           <Image
             src={project.coverImage}
             alt={project.title}
             // className='w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105'
-            className='w-full h-78 object-cover rounded-l-2xl'
+            className='w-full h-52 md:h-78 object-cover  rounded-t-2xl md:rounded-l-2xl'
             height={0}
             width={0}
             sizes='100vw'
