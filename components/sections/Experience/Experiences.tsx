@@ -20,11 +20,10 @@ const Experiences = async () => {
     <section className='flex items-center justify-center py-8 md:py-15 bg-gradient-to-br from-black via-zinc-900 to-black'>
       <div className="className='container-xl lg:container m-auto px-4 py-6'">
         <div className='space-y-8'>
-          {experiences.map((experience, index) => (
+          {experiences.map((experience) => (
             <ExperienceCard
               key={experience._id.toString()}
               experience={experience}
-              index={index}
             />
           ))}
         </div>
