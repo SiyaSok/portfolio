@@ -7,26 +7,37 @@ import connectDB from "@/lib/database/connection";
 export async function Eduction() {
   await connectDB();
   const education = await getEduction();
+
+  function isEven(num: number) {
+    return num % 2 === 0;
+  }
+
   return (
     <section className=''>
       <div className='container mx-auto px-4'>
-        <div className='grid grid-cols-1 gap-8'>
+        <div className='grid grid-cols-2 gap-8'>
           {education.map((project, index) => (
-            <div key={index} className='group relative'>
+            <div
+              key={index}
+              className={`group relative h-58 md:h-58 overflow-hidden rounded-lg border border-muted shadow-sm hover:drop-shadow-accent transition-shadow duration-300 
+              ${isEven(index) ? "bg-white" : " bg-black text-white"}`}>
               {/* Project Card */}
-              <div className='relative z-10 p-6 md:p-8 bg-background border rounded-lg shadow-sm group-hover:shadow-md transition-shadow'>
+              <div className='p-6 flex flex-col h-full relative'>
                 <div className='flex flex-col md:flex-row gap-6'>
                   {/* Project Content */}
                   <div className='flex-1'>
                     <div className='mb-2'>
-                      <Badge variant='outline' className='text-primary'>
+                      <Badge
+                        variant='outline'
+                        className={`
+              ${isEven(index) ? "text-primary " : " bg-gray-100"}`}>
                         Qaulification
                       </Badge>
                     </div>
                     <h3 className='text-xl md:text-2xl font-bold mb-2'>
                       {project.qaulification}
                     </h3>
-                    <p className='text-sm mb-3'>{project.description}</p>
+                    {/* <p className='text-sm mb-3'>{project.description}</p> */}
                     <p className='text-sm mb-3'>{project.collage}</p>
                     <p className='text-sm mb-3'>{project.location}</p>
                     <p className='text-sm mb-3'>

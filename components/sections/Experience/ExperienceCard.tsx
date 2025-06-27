@@ -9,29 +9,16 @@ import Link from "next/link";
 
 interface ExperienceCardProps {
   experience: ExperienceType;
-  index: number;
 }
 
-export function ExperienceCard({ experience, index }: ExperienceCardProps) {
-  //   const duration = calculateDuration(
-  //     experience.startDate,
-  //     // experience.endDate,
-  //     experience.currentlyWorking
-  //   );
-
-  function isEven(num: number) {
-    return num % 2 === 0;
-  }
-
+export function ExperienceCard({ experience }: ExperienceCardProps) {
   return (
     <div
-      className={`border rounded-lg p-6 hover:shadow-md transition-shadow ${
-        isEven(index) ? "bg-white" : " bg-zinc-100"
-      }`}>
+      className={` rounded-lg p-6 hover:shadow-md transition-shadow bg-white `}>
       <Link href={`/experience/${experience._id}`}>
         <div className='flex flex-col sm:flex-row gap-4'>
           {experience.logo && (
-            <div className='w-16 h-16 flex-shrink-0 bg-white rounded-lg border flex items-center justify-center overflow-hidden'>
+            <div className='w-16 h-16 flex-shrink-0 bg-white rounded-lg  flex items-center justify-center overflow-hidden'>
               <Image
                 src={experience.logo}
                 alt={`${experience.company} logo`}
