@@ -18,7 +18,9 @@ export async function ProjectCard({ index, project }: ProjectCardProps) {
   return (
     <div
       className={`h-auto md:min-h-72 border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row items-stretch ${
-        isEven(index) ? "bg-white" : "bg-black text-white"
+        isEven(index)
+          ? "bg-white"
+          : "bg-gradient-to-br from-black via-zinc-900 to-black text-white"
       }`}>
       {/* Image Section - 30% */}
       <Link href={`projects/${project._id}`} className='w-full md:w-[30%]'>

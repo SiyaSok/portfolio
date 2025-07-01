@@ -18,7 +18,7 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
       <Link href={`/experience/${experience._id}`}>
         <div className='flex flex-col sm:flex-row gap-4'>
           {experience.logo && (
-            <div className='w-16 h-16 flex-shrink-0 bg-white rounded-lg  flex items-center justify-center overflow-hidden'>
+            <div className='w-16 h-16 flex-shrink-0 bg-white rounded-lg hidden md:flex items-center justify-center overflow-hidden'>
               <Image
                 src={experience.logo}
                 alt={`${experience.company} logo`}
@@ -31,26 +31,38 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
           )}
 
           <div className='flex-1'>
-            <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2'>
+            <div className='flex flex-row md:items-center md:justify-between gap-2'>
+              {experience.logo && (
+                <div className='w-16 h-16 flex-shrink-0 bg-white rounded-lg  flex md:hidden items-center justify-center overflow-hidden'>
+                  <Image
+                    src={experience.logo}
+                    alt={`${experience.company} logo`}
+                    className='w-12 h-12 object-contain'
+                    height={0}
+                    width={0}
+                    sizes='100vw'
+                  />
+                </div>
+              )}
               <div>
                 <h3 className='text-lg font-semibold'>{experience.role}</h3>
                 <p className='text-muted-foreground'>
                   {experience.company} • {experience.employmentType}
                 </p>
+
+                <div className='mt-2 text-sm text-muted-foreground'>
+                  {format(experience.startDate, "MMM yyyy")} -{" "}
+                  {experience.currentlyWorking
+                    ? "Present"
+                    : format(experience.endDate!, "MMM yyyy")}{" "}
+                  • {""}
+                </div>
               </div>
               {experience.featured && (
                 <Badge variant='secondary' className='w-fit'>
                   Featured
                 </Badge>
               )}
-            </div>
-
-            <div className='mt-2 text-sm text-muted-foreground'>
-              {format(experience.startDate, "MMM yyyy")} -{" "}
-              {experience.currentlyWorking
-                ? "Present"
-                : format(experience.endDate!, "MMM yyyy")}{" "}
-              • {""}
             </div>
 
             <p className='mt-3 text-sm line-clamp-2'>

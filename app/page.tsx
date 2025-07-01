@@ -14,7 +14,7 @@ export default async function Home() {
       <Projects />
       <Heading heading='02. Experience' />
       <Experiences />
-      <Heading heading='03. Eduction' />
+      <Heading heading='03. Qaulifications' />
       <Eduction />
     </div>
   );
