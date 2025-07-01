@@ -2,7 +2,7 @@
 
 // import { Button } from "@/components/ui/button";
 import Link from "next/link";
-
+import { FileCode, FolderGit2 } from "lucide-react";
 export function Hero() {
   return (
     <section className='min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-zinc-900 to-black relative '>
@@ -31,14 +31,28 @@ export function Hero() {
           <h1 className='text-4xl md:text-6xl font-bold mb-6 text-white'>
             <span className='text-primary-300'>Siyanda Sokhela</span>
           </h1>
-          <p className='text-xl text-gray-300 mb-8'>
+          <p className='text-xl text-gray-300 mb-4'>
             Front-End Developer creating beautiful, responsive web experiences
           </p>
+          <div className='flex gap-8 justify-center mt-8'>
+            <Link
+              href='/resume_.pdf'
+              className=' font-semibold text-white bg-primary-500 hover:bg-white hover:text-black  transition-colors flex items-center gap-2 px-4 py-2 rounded-lg border border-primary-500 hover:border-primary-600'>
+              <FileCode className='w-5 h-5' />
+              Resume
+            </Link>
+            <Link
+              href='#projects'
+              className=' font-semibold text-white bg-primary-500 hover:bg-white hover:text-black transition-colors flex items-center gap-2 px-4 py-2 rounded-lg border border-primary-500 hover:border-primary-600'>
+              <FolderGit2 className='w-5 h-5' />
+              Projects
+            </Link>
+          </div>
         </div>
       </div>
 
       {/* Floating down arrow icon */}
-      <div className='absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce'>
+      <div className='absolute bottom-4 md:bottom-2 left-1/2 transform -translate-x-1/2 z-20 animate-bounce'>
         <Link href='#projects' className='block'>
           <svg
             xmlns='http://www.w3.org/2000/svg'

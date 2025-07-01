@@ -1,5 +1,6 @@
 /** @format */
 // import Image from "next/image";
+import { FileCode, FolderGit2 } from "lucide-react";
 import Link from "next/link";
 
 // import logo from "@/assets/images/logo-white.png";
@@ -14,11 +15,19 @@ const Footer = () => {
         </div>
         <div className='flex flex-wrap justify-center md:justify-start mb-4 md:mb-0'>
           <ul className='flex space-x-4 text-white '>
-            {/* <li>
-              <Link href='/properties'>email</Link>
-            </li> */}
             <li>
-              <Link href='/'>Terms of Service</Link>
+              <Link href='/resume_.pdf' className='flex gap-2 items-center'>
+                {" "}
+                <FileCode className='w-5 h-5' />
+                Resume
+              </Link>
+            </li>
+            <li>
+              <Link href='/resume_.pdf' className='flex gap-2 items-center'>
+                {" "}
+                <FolderGit2 className='w-5 h-5' />
+                Projects
+              </Link>
             </li>
           </ul>
         </div>
