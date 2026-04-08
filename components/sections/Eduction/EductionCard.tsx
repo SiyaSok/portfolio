@@ -1,67 +1,60 @@
 /** @format */
 
+import { EductionType } from "@/types";
 import { Badge } from "@/components/ui/badge";
 
-import { EductionType } from "@/types";
-
-type EductionCardProps = {
+type Props = {
   eduction: EductionType;
   index: number;
 };
 
-export async function EductionCard({ eduction, index }: EductionCardProps) {
-  function isEven(num: number) {
-    return num % 2 === 0;
-  }
-
+export function EductionCard({ eduction }: Props) {
   return (
-    <div
-      key={index}
-      className={`group relative h-auto md:h-62 overflow-hidden rounded-lg border border-muted shadow-sm hover:drop-shadow-accent transition-shadow duration-300 
-    ${
-      isEven(index)
-        ? "bg-white border-muted text-black"
-        : " bg-gradient-to-br from-black via-zinc-900 to-black text-white"
-    }`}>
-      {/* Project Card */}
-      <div className='p-6 flex flex-col h-full relative justify-center'>
-        <div className='flex flex-col  md:flex-row gap-6'>
-          {/* Project Content */}
-          <div className='flex-1'>
-            <div className='mb-2'>
-              <Badge
-                variant='outline'
-                className={`${
-                  isEven(index) ? "text-primary " : " bg-gray-100"
-                }`}>
-                Qaulification
-              </Badge>
-            </div>
-            <h3 className='text-xl md:text-2xl font-bold mb-2'>
-              {eduction.qaulification}
-            </h3>
-            {/* <p className='text-sm mb-3'>{project.description}</p> */}
-            <p className='text-sm mb-3'>{eduction.collage}</p>
-            <p className='text-sm mb-3'>{eduction.location}</p>
-            <p className='text-sm mb-3'>
-              {new Date(eduction.startDate).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-              })}{" "}
-              -{" "}
-              {eduction.endDate
-                ? new Date(eduction.endDate).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                  })
-                : "Present"}
-            </p>
-          </div>
+    <div className='relative pl-10 group'>
+      {/* Timeline Dot */}
+      <div className='absolute left-[-9px] top-2 w-4 h-4 rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 shadow-lg' />
+
+      {/* Card */}
+      <div className='p-6 rounded-2xl bg-gradient-to-br from-zinc-900 to-black border border-white/10 hover:border-white/20 transition relative overflow-hidden'>
+        {/* Glow Hover */}
+        <div className='absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-indigo-500/10 to-blue-500/10 blur-2xl' />
+
+        {/* Content */}
+        <div className='relative z-10'>
+          {/* Badge */}
+          <Badge
+            variant='outline'
+            className='mb-3 text-gray-300 border-white/20'>
+            Qualification
+          </Badge>
+
+          {/* Title */}
+          <h3 className='text-xl font-semibold text-white'>
+            {eduction.qaulification}
+          </h3>
+
+          {/* College */}
+          <p className='text-sm text-gray-400 mt-1'>{eduction.collage}</p>
+
+          {/* Location */}
+          <p className='text-xs text-gray-500 mt-1'>{eduction.location}</p>
+
+          {/* Dates */}
+          <p className='text-sm text-gray-400 mt-3'>
+            {new Date(eduction.startDate).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short",
+            })}{" "}
+            -{" "}
+            {eduction.endDate
+              ? new Date(eduction.endDate).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "short",
+                })
+              : "Present"}
+          </p>
         </div>
       </div>
-
-      {/* Background Decoration */}
-      <div className='absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10' />
     </div>
   );
 }

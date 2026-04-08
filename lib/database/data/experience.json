@@ -1,8 +1,5 @@
 [
   {
-    "_id": {
-      "$oid": "682b6eaed3f89c1b6629e6d9"
-    },
     "role": "Frontend Developer",
     "company": "Repwise",
     "description": "Specializing in building and maintaining responsive web applications using jQuery and Kendo UI within MVC frameworks. Apply OOP principles to create clean, modular, and reusable code for efficient development and maintenance. Skilled in debugging, cross-browser testing, and seamless C# backend integration to ensure optimal performance and user experience.",
@@ -34,9 +31,6 @@
     "featured": true
   },
   {
-    "_id": {
-      "$oid": "682c30ccd3f89c1b6629e6db"
-    },
     "role": "Front-End Software Engineer",
     "company": "khokha Card Machines and Online Payment Tools",
     "description": "Passionate about crafting responsive, user-centric web experiences with a focus on performance and accessibility. Skilled in developing optimized landing pages and intuitive interfaces using modern frameworks like React and Shopify. Experienced in Hubspot CMS development, SEO implementation, and cross-browser compatible designs.",
@@ -91,9 +85,6 @@
     "featured": false
   },
   {
-    "_id": {
-      "$oid": "682c356ed3f89c1b6629e6dc"
-    },
     "role": "Frontend Developer",
     "company": "MR Price Group",
     "description": "Skilled in designing responsive, user-centric websites and interfaces that improve engagement and conversion. Developed optimized landing pages and executed full website redesigns to enhance usability, visuals, and SEO performance. Proficient in responsive design, cross-browser compatibility, and troubleshooting to ensure flawless functionality.",
@@ -145,9 +136,6 @@
     "featured": false
   },
   {
-    "_id": {
-      "$oid": "682c3eacd3f89c1b6629e6dd"
-    },
     "role": "Website Editor and Developer",
     "company": "IX Online Motoring",
     "description": "Experienced in designing responsive, SEO-optimized websites that enhance user engagement. Skilled in collaborating with clients and cross-functional teams to deliver tailored digital solutions. Proficient in content updates, troubleshooting, and technical support to ensure seamless functionality and high user satisfaction. Adept at implementing modern design trends and performance improvements.",

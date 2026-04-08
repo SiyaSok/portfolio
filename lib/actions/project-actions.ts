@@ -9,11 +9,10 @@ export const getProjects = async () => {
   try {
     await connectDB();
     const projects = await Project.find();
-
     return projects;
   } catch (error) {
-    console.error("Error fetching experiences:", error);
-    throw new Error("Failed to fetch experiences");
+    console.error("Error fetching projects:", error);
+    throw new Error("Failed to fetch projects");
   }
 };
 export const getProjectById = async (id: string) => {
@@ -21,9 +20,11 @@ export const getProjectById = async (id: string) => {
     await connectDB();
     const project = await Project.findById(id);
 
+    console.log("Fetched project:", project);
+
     return project;
   } catch (error) {
-    console.error("Error fetching experiences:", error);
-    throw new Error("Failed to fetch experiences");
+    console.error("Error fetching projects:", error);
+    throw new Error("Failed to fetch projects");
   }
 };

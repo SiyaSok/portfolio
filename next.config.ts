@@ -23,6 +23,11 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "via.placeholder.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
         hostname: "6412394.fs1.hubspotusercontent-na1.net",
         pathname: "**",
       },

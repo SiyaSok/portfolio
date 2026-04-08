@@ -21,6 +21,8 @@ export const getExperienceById = async (id: string) => {
 
     const experience = await Experience.findById(id);
 
+    console.log("Fetched experience:", experience);
+
     return experience;
   } catch (error) {
     console.error("Error fetching experiences:", error);
