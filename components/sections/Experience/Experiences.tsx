@@ -2,6 +2,7 @@
 
 import { getExperiences } from "@/lib/actions/experience.actions";
 import { ExperienceCard } from "./ExperienceCard";
+import { ExperienceType } from "@/types";
 
 const Experiences = async () => {
   const experiences = await getExperiences();
@@ -20,7 +21,7 @@ const Experiences = async () => {
     <section className='flex items-center justify-center py-8 md:py-15 bg-gradient-to-br from-black via-zinc-900 to-black'>
       <div className='container-xl lg:container m-auto px-4 py-6'>
         <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
-          {experiences.map((experience) => (
+          {experiences.map((experience: ExperienceType) => (
             <ExperienceCard
               key={experience._id.toString()}
               experience={experience}

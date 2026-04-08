@@ -1,5 +1,6 @@
 /** @format */
 
+import { ProjectType } from "@/types";
 import { ProjectCard } from "./ProjectCard";
 import { getProjects } from "@/lib/actions/project-actions";
 
@@ -37,7 +38,7 @@ export async function Projects() {
 
         {/* Grid with staggered animation */}
         <div className='space-y-12'>
-          {projects.map((project, i) => (
+          {projects.map((project: ProjectType, i: number) => (
             <div
               key={project._id.toString()}
               className='animate-in slide-in-from-bottom-8 duration-700 delay-'
