@@ -8,8 +8,9 @@ import Project from "../database/models/projectModel";
 export const getProjects = async () => {
   try {
     await connectDB();
-    const projects = await Project.find();
-    return projects;
+    const projects = await Project.find().lean();
+    const safeProjects = JSON.parse(JSON.stringify(projects));
+    return safeProjects;
   } catch (error) {
     console.error("Error fetching projects:", error);
     throw new Error("Failed to fetch projects");
@@ -18,11 +19,11 @@ export const getProjects = async () => {
 export const getProjectById = async (id: string) => {
   try {
     await connectDB();
-    const project = await Project.findById(id);
+    const project = await Project.findById(id).lean();
 
-    console.log("Fetched project:", project);
+    const safeProject = JSON.parse(JSON.stringify(project));
 
-    return project;
+    return safeProject;
   } catch (error) {
     console.error("Error fetching projects:", error);
     throw new Error("Failed to fetch projects");

@@ -12,7 +12,7 @@ export const getEduction = async (): Promise<
 > => {
   try {
     await connectDB();
-    const education = await Education.find();
+    const education = await Education.find().lean();
     return convertToPlainObject(education) as unknown as EductionType;
   } catch (error) {
     console.error("Error fetching education:", error);
@@ -22,8 +22,10 @@ export const getEduction = async (): Promise<
 export const getEductionById = async (id: string) => {
   try {
     await connectDB();
-    const education = await Education.findById(id);
-    return education;
+    const education = await Education.findById(id).lean();
+
+    const safeEducation = JSON.parse(JSON.stringify(education));
+    return safeEducation;
   } catch (error) {
     console.error("Error fetching education:", error);
     throw new Error("Failed to fetch education");
