@@ -35,8 +35,6 @@ export async function Projects() {
             showcase my passion for building exceptional digital experiences.
           </p>
         </div>
-
-        {/* Grid with staggered animation */}
         <div className='space-y-12'>
           {projects.map((project: ProjectType, i: number) => (
             <div
