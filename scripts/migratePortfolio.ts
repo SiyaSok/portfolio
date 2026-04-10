@@ -1,9 +1,9 @@
 /** @format */
 
 // scripts/migratePortfolio.ts
-import Education from "@/lib/database/models/educationModel";
-import Experience from "@/lib/database/models/experienceModel";
-import Project from "@/lib/database/models/projectModel";
+import Education from "../lib/database/models/educationModel";
+import Experience from "../lib/database/models/experienceModel";
+import Project from "../lib/database/models/projectModel";
 import mongoose from "mongoose";
 
 async function migrateProjects() {

@@ -4,15 +4,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import {
-  FileCode,
-  Github,
-  Linkedin,
-  Mail,
-  ArrowDown,
-  Code2,
-  Layers,
-} from "lucide-react";
+import { FileCode, ArrowDown, Layers } from "lucide-react";
+import { FaGithub, FaLinkedin, FaMailBulk } from "react-icons/fa";
+
 import { useEffect, useState } from "react";
 
 export function Hero() {
@@ -135,14 +129,22 @@ export function Hero() {
           {/* Social Icons */}
           <div className='flex gap-4 pt-4'>
             {[
-              { icon: Github, href: "https://github.com", label: "GitHub" },
               {
-                icon: Linkedin,
+                icon: FaGithub,
+                href: "https://github.com",
+                label: "GitHub",
+              },
+              {
+                icon: FaLinkedin,
                 href: "https://linkedin.com",
                 label: "LinkedIn",
               },
-              { icon: Mail, href: "mailto:hello@siyanda.dev", label: "Email" },
-              { icon: Code2, href: "#", label: "LeetCode" },
+              {
+                icon: FaMailBulk,
+                href: "mailto:siyandasokhela@gmail.com",
+                label: "Email",
+              },
+              // { icon: Code2, href: "#", label: "LeetCode" },
             ].map((social, idx) => (
               <Link
                 key={idx}

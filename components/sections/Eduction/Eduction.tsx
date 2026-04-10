@@ -17,7 +17,9 @@ export async function Eduction() {
   }
 
   return (
-    <section className='relative py-24 bg-black text-white overflow-hidden'>
+    <section
+      id='education'
+      className='relative py-24 bg-black text-white overflow-hidden'>
       {/* Subtle Glow Background - monochrome */}
       <div className='absolute top-[-100px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white/5 blur-[140px] rounded-full' />
 
