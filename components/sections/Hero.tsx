@@ -131,12 +131,12 @@ export function Hero() {
             {[
               {
                 icon: FaGithub,
-                href: "https://github.com",
+                href: "https://github.com/SiyaSok",
                 label: "GitHub",
               },
               {
                 icon: FaLinkedin,
-                href: "https://linkedin.com",
+                href: "https://www.linkedin.com/in/siyanda-sokhela-19b77583",
                 label: "LinkedIn",
               },
               {
